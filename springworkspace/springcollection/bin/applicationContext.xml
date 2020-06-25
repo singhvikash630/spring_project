@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<bean id="capitalBean" class="com.java.spring.pojo.Capital">
+   <property name="capitalNm" value="Delhi"/>
+</bean>
+ 
+<bean id="countryBean" class="com.java.spring.pojo.Country" scope="singleton">
+    <property name="countryNm" value="India"/>
+    <property name="capitalObj" ref="capitalBean"/>
+</bean>
+
+<bean id="collectionBean" class="com.java.spring.pojo.Collection">
+<!-- JAVA.UTIL.LIST -->
+  <property name="list">
+    <list>
+     <value>myVal</value>
+     <value>1</value>
+     <value>myVal</value>
+     <value>1</value>
+     <ref bean="capitalBean" />
+     <bean class="com.java.spring.pojo.Capital">
+         <property name="capitalNm" value="Delhi"/>
+     </bean>
+    </list>
+  </property>
+
+<!-- JAVA.UTIL.SET -->
+<property name="set">
+    <set>
+     <value>myVal</value>
+     <value>1</value>
+      <value>myVal</value>
+     <value>1</value>
+     <ref bean="capitalBean"/>
+     <bean class="com.java.spring.pojo.Capital">
+         <property name="capitalNm" value="Delhi"/>
+     </bean>
+    </set>
+  </property>
+
+ 
+ <!-- JAVA.UTIL.MAP -->
+   <property name="map">
+   <map>
+     <entry key="key1" value="vall" />
+     <entry key="key2" value-ref="capitalBean" />
+     <entry key="key3">
+         <bean class="com.java.spring.pojo.Capital">
+              <property name="capitalNm" value="XYZ"/>
+         </bean>
+     </entry>
+     </map>
+ </property>
+ 
+ <!-- JAVA.UTIL.PROPERTIES -->
+ <property name="prop">
+    <props>
+      <prop key="url">jdbc:mysql://localhost:3306/class</prop>
+      <prop key="usesrNm">root</prop>
+      <prop key="password">root</prop>
+    </props>
+ </property>
+ 
+ 
+</bean>
+
+</beans>

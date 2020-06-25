@@ -1,0 +1,22 @@
+
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+<bean id="spring3HelloWorldBean1" class="net.roseindia.Spring3HelloWorld" />
+
+<bean id="spring3HelloWorldBean2" class="net.roseindia.Spring3HelloWorld">
+<constructor-arg>
+<value>
+Hello to Spring Framework from XML Configuration file
+</value>
+</constructor-arg>
+</bean>
+
+
+</beans>
+

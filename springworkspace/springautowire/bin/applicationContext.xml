@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+                    
+<bean id="capitalBean" class="com.java.spring.pojo.Capital">
+<property name="capitalNm" value="Delhi" />
+</bean>
+
+<!-- <bean id="capitalBean1" class="com.java.spring.pojo.Capital">
+<property name="capitalNm" value="Delhi" />
+</bean>
+ -->
+
+<!--DI WITH SETTER METHOD-->
+<!-- <bean id="countryBean" class="com.java.spring.pojo.Country" autowire="no"> -->
+
+<!-- <bean id="countryBean" class="com.java.spring.pojo.Country" autowire="default"> -->
+
+ <bean id="countryBean" class="com.java.spring.pojo.Country" autowire="byName">
+ 
+ <!-- <bean id="countryBean" class="com.java.spring.pojo.Country" autowire="byType"> -->
+ 
+ <!-- <bean id="countryBean" class="com.java.spring.pojo.Country" autowire="constructor"> -->
+ 
+ <!-- <bean id="countryBean" class="com.java.spring.pojo.Country" autowire="autodetect"> -->
+ 
+<property name="countryNm" value="India" />
+<!-- <property name="capitalObj" ref="capitalBean" /> -->
+
+ 
+<!--DI WITH CONSTRUCTOR ARGUMENT TYPE MATCHING -->
+<!-- <constructor-arg index="0" type="java.lang.String" value="India"/> -->
+ 
+ </bean>
+
+</beans>
+
